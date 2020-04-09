@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Dice Roll</h2>
+
+
+<canvas id="myCanvas" width="150" height="150" style="border:1px solid red;">Your browser does not support the canvas element.</canvas>
+
+
+
+<p class="dice" id="die1">Die1</p>
+<p class="dice" id="die2">Die2</p>
+
+<button class="button" onclick="roll()">Roll</button>
+
+
+<script>
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+
+function roll() {
+	var x = Math.floor(Math.random() * 6) + 1
+	document.getElementById("die1").innerHTML = x;
+
+	ctx.fillStyle = "#FF0000";
+	ctx.fillRect(0,0,150,150);
+	for (i = 1; i < x; i++) {
+	ctx.moveTo(0,i*150);
+	ctx.lineTo(150,i*!50);
+	ctx.stroke();
+	}
+}
+
+
+ctx.fillStyle = "#FF0000";
+ctx.fillRect(0,0,150,150);
+
+
+
+</script>
+
+</body>
+</html>
